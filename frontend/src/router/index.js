@@ -9,6 +9,8 @@ import SystemSettings from '../views/SystemSettings.vue'
 import EmployeeManagement from '../views/EmployeeManagement.vue'
 import ScheduleManagement from '../views/ScheduleManagement.vue'
 
+import CustomerRelationship from '../views/CustomerRelationship.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -64,6 +66,12 @@ const routes = [
         path: '/schedule',
         name: 'Schedule',
         component: ScheduleManagement,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/crm',
+        name: 'CustomerRelationship',
+        component: CustomerRelationship,
         meta: { requiresAuth: true }
     }
 ]

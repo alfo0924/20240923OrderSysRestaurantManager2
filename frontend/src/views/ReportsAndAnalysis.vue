@@ -2,14 +2,17 @@
   <div class="reports-and-analysis">
     <h2>報表和分析</h2>
     <div class="report-options">
-      <button @click="generateSalesReport">生成銷售報表</button>
-      <button @click="generateInventoryReport">生成庫存報表</button>
-      <button @click="generateFinancialReport">生成財務報表</button>
+      <select v-model="selectedReport" @change="generateReport">
+        <option value="">選擇報表類型</option>
+        <option value="sales">銷售報表</option>
+        <option value="inventory">庫存報表</option>
+        <option value="financial">財務報表</option>
+      </select>
+      <input type="date" v-model="startDate">
+      <input type="date" v-model="endDate">
+      <button @click="generateReport">生成報表</button>
     </div>
-    <div class="chart-container" v-if="chartData">
-      <canvas ref="chartCanvas"></canvas>
-    </div>
-    <div class="report-table" v-if="reportData.length">
+    <div v-if="reportData.length" class="report-container">
       <table>
         <thead>
         <tr>
@@ -23,6 +26,9 @@
         </tbody>
       </table>
     </div>
+    <div class="chart-container" v-if="chartData">
+      <canvas ref="chartCanvas"></canvas>
+    </div>
   </div>
 </template>
 
@@ -33,31 +39,32 @@ export default {
   name: 'ReportsAndAnalysis',
   data() {
     return {
-      chartData: null,
+      selectedReport: '',
+      startDate: '',
+      endDate: '',
       reportData: [],
       reportHeaders: [],
+      chartData: null,
       chart: null
     }
   },
   methods: {
-    generateSalesReport() {
-      // 這裡應該調用 API 獲取銷售報表數據
+    generateReport() {
+      // 這裡應該調用 API 獲取報表數據
       // 暫時使用模擬數據
-      this.reportHeaders = ['日期', '總銷售額', '訂單數量']
-      this.reportData = [
-        { id: 1, 日期: '2024-09-01', 總銷售額: 5000, 訂單數量: 50 },
-        { id: 2, 日期: '2024-09-02', 總銷售額: 5500, 訂單數量: 55 },
-        { id: 3, 日期: '2024-09-03', 總銷售額: 4800, 訂單數量: 48 }
-      ]
-      this.createChart('銷售趨勢', '日期', '總銷售額')
-    },
-    generateInventoryReport() {
-      // 實現生成庫存報表的邏輯
-      console.log('生成庫存報表')
-    },
-    generateFinancialReport() {
-      // 實現生成財務報表的邏輯
-      console.log('生成財務報表')
+      if (this.selectedReport === 'sales') {
+        this.reportHeaders = ['日期', '總銷售額', '訂單數量']
+        this.reportData = [
+          { id: 1, 日期: '2024-09-01', 總銷售額: 5000, 訂單數量: 50 },
+          { id: 2, 日期: '2024-09-02', 總銷售額: 5500, 訂單數量: 55 },
+          { id: 3, 日期: '2024-09-03', 總銷售額: 4800, 訂單數量: 48 }
+        ]
+        this.createChart('銷售趨勢', '日期', '總銷售額')
+      } else if (this.selectedReport === 'inventory') {
+        // 生成庫存報表的邏輯
+      } else if (this.selectedReport === 'financial') {
+        // 生成財務報表的邏輯
+      }
     },
     createChart(title, xAxisLabel, yAxisLabel) {
       if (this.chart) {
@@ -111,10 +118,8 @@ export default {
 .report-options {
   margin-bottom: 20px;
 }
-.chart-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+.report-container {
+  margin-bottom: 20px;
 }
 table {
   width: 100%;
@@ -127,5 +132,10 @@ th, td {
 }
 th {
   background-color: #f2f2f2;
+}
+.chart-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 </style>
