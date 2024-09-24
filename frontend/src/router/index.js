@@ -10,6 +10,7 @@ import EmployeeManagement from '../views/EmployeeManagement.vue'
 import ScheduleManagement from '../views/ScheduleManagement.vue'
 
 import CustomerRelationship from '../views/CustomerRelationship.vue'
+import SupplierManagement from '../views/SupplierManagement.vue'
 
 Vue.use(VueRouter)
 
@@ -73,7 +74,14 @@ const routes = [
         name: 'CustomerRelationship',
         component: CustomerRelationship,
         meta: { requiresAuth: true }
+    },
+    {
+        path: '/suppliers',
+        name: 'Suppliers',
+        component: SupplierManagement,
+        meta: { requiresAuth: true }
     }
+
 ]
 
 const router = new VueRouter({
