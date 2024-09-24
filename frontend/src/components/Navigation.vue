@@ -9,6 +9,8 @@
       <li><router-link to="/reports">報表</router-link></li>
       <li><router-link to="/reports">報表和分析</router-link></li>
       <li><router-link to="/settings">系統設置</router-link></li>
+      <li><router-link to="/employees">員工管理</router-link></li>
+      <li><router-link to="/schedule">排班管理</router-link></li>
     </ul>
   </nav>
 </template>

@@ -6,6 +6,8 @@ import InventoryManagement from '../views/InventoryManagement.vue'
 import StaffManagement from '../views/StaffManagement.vue'
 import ReportsAndAnalysis from '../views/ReportsAndAnalysis.vue'
 import SystemSettings from '../views/SystemSettings.vue'
+import EmployeeManagement from '../views/EmployeeManagement.vue'
+import ScheduleManagement from '../views/ScheduleManagement.vue'
 
 Vue.use(VueRouter)
 
@@ -51,6 +53,17 @@ const routes = [
         path: '/settings',
         name: 'Settings',
         component: SystemSettings,
+        meta: { requiresAuth: true }
+    },{
+        path: '/employees',
+        name: 'Employees',
+        component: EmployeeManagement,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/schedule',
+        name: 'Schedule',
+        component: ScheduleManagement,
         meta: { requiresAuth: true }
     }
 ]
