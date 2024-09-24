@@ -13,6 +13,8 @@
       <li><router-link to="/schedule">排班管理</router-link></li>
       <li><router-link to="/crm">客戶關係管理</router-link></li>
       <li><router-link to="/suppliers">供應商管理</router-link></li>
+      <li><router-link to="/members">會員管理</router-link></li>
+      <li><router-link to="/promotions">優惠活動</router-link></li>
     </ul>
   </nav>
 </template>

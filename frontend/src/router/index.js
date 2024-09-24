@@ -11,6 +11,9 @@ import ScheduleManagement from '../views/ScheduleManagement.vue'
 
 import CustomerRelationship from '../views/CustomerRelationship.vue'
 import SupplierManagement from '../views/SupplierManagement.vue'
+import MemberManagement from '../views/MemberManagement.vue'
+import PromotionManagement from '../views/PromotionManagement.vue'
+
 
 Vue.use(VueRouter)
 
@@ -46,7 +49,8 @@ const routes = [
         name: 'Dashboard',
         component: () => import('../views/Dashboard.vue'),
         meta: { requiresAuth: true }
-    },{
+    },
+    {
         path: '/reports',
         name: 'Reports',
         component: ReportsAndAnalysis,
@@ -57,7 +61,8 @@ const routes = [
         name: 'Settings',
         component: SystemSettings,
         meta: { requiresAuth: true }
-    },{
+    },
+    {
         path: '/employees',
         name: 'Employees',
         component: EmployeeManagement,
@@ -79,6 +84,18 @@ const routes = [
         path: '/suppliers',
         name: 'Suppliers',
         component: SupplierManagement,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/members',
+        name: 'Members',
+        component: MemberManagement,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/promotions',
+        name: 'Promotions',
+        component: PromotionManagement,
         meta: { requiresAuth: true }
     }
 
