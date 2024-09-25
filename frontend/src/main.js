@@ -41,5 +41,8 @@ Vue.prototype.$http = axios
 new Vue({
     router,
     store,
-    render: h => h(App)
+    render: h => h(App),
+    created() {
+        this.$store.dispatch('initializeStore')
+    }
 }).$mount('#app')

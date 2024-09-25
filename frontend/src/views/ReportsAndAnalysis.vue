@@ -131,7 +131,7 @@ th, td {
   text-align: left;
 }
 th {
-  background-color: #f2f2f2;
+  background-color: #595959;
 }
 .chart-container {
   width: 100%;

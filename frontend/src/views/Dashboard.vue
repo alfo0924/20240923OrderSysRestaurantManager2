@@ -16,7 +16,7 @@
         <p>{{ activeCustomers }}</p>
       </div>
     </div>
-    <button @click="logout">登出</button>
+
   </div>
 </template>
 
@@ -37,13 +37,6 @@ export default {
     this.todayOrders = 15
     this.monthlyIncome = '$5,000'
     this.activeCustomers = 100
-  },
-  methods: {
-    logout() {
-      // 實現登出邏輯
-      this.$store.dispatch('logout')
-      this.$router.push('/login')
-    }
   }
 }
 </script>
@@ -58,7 +51,7 @@ export default {
   margin-top: 20px;
 }
 .stat-card {
-  background-color: #f0f0f0;
+  background-color: #a6a6a6;
   padding: 15px;
   border-radius: 8px;
   text-align: center;

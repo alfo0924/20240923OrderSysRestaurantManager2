@@ -125,7 +125,7 @@ th, td {
   text-align: left;
 }
 th {
-  background-color: #f2f2f2;
+  background-color: #595959;
 }
 .modal {
   position: fixed;
@@ -138,7 +138,7 @@ th {
   background-color: rgba(0,0,0,0.4);
 }
 .modal-content {
-  background-color: #fefefe;
+  background-color: #595959;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;

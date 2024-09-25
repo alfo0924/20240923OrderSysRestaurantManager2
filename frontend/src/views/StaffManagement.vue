@@ -71,6 +71,9 @@ export default {
 </script>
 
 <style scoped>
+.staff-management{
+  padding: 20px;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -81,6 +84,6 @@ th, td {
   text-align: left;
 }
 th {
-  background-color: #f2f2f2;
+  background-color: #595959;
 }
 </style>

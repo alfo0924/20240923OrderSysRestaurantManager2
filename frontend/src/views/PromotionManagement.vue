@@ -140,7 +140,7 @@ th {
   background-color: rgba(0,0,0,0.4);
 }
 .modal-content {
-  background-color: #fefefe;
+  background-color: #595959;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
